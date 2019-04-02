@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule }    from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent }   from './app.component';
 
@@ -77,6 +78,7 @@ import { TreeTableModule } from 'primeng/treetable';
 
 @NgModule({
   imports: [
+  HttpClientModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,

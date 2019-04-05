@@ -11,6 +11,9 @@ export class AppComponent implements OnInit {
 
 
   files: TreeNode[];
+  files2: TreeNode[];
+  selectedNodes3: TreeNode[];
+
   cols: any[]; 
   counter = 0;
 
@@ -18,6 +21,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
   	this.getFileSystem().then(files => this.files = files);
+  	this.getFileSystem().then(files => {
+  		this.files2 = files;
+  		this.files2[0].expanded = true;
+  	});
     this.cols = [
             { field: 'name', header: 'Name' },
             { field: 'size', header: 'Size' },
@@ -65,4 +72,12 @@ export class AppComponent implements OnInit {
         });
         
 	}
+
+	nodeSelect(event) {
+        console.log(event);
+    }
+
+    nodeUnselect(event) {
+        console.log(event);
+    }
 }
